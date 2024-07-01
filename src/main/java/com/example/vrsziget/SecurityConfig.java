@@ -19,7 +19,7 @@ public class SecurityConfig {
                         .requestMatchers("/**").permitAll() // Allow access to this endpoint
                         .anyRequest().authenticated() // Require authentication for all other endpoints
                 ).csrf(csrf -> csrf.disable()).headers((headers) -> headers
-                        .addHeaderWriter(new StaticHeadersWriter("Content-Security-Policy", "default-src 'self'; script-src 'self' https://ec2-18-192-58-114.eu-central-1.compute.amazonaws.com"))
+                        .addHeaderWriter(new StaticHeadersWriter("Content-Security-Policy", "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' http://ec2-18-192-58-114.eu-central-1.compute.amazonaws.com:8080"))
                 );
         return http.build();
     }
