@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.header.writers.ContentSecurityPolicyHeaderWriter;
 import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
 @Configuration
@@ -17,8 +18,8 @@ public class SecurityConfig {
                 .authorizeRequests(authorize -> authorize
                         .requestMatchers("/**").permitAll() // Allow access to this endpoint
                         .anyRequest().authenticated() // Require authentication for all other endpoints
-                ).csrf(csrf -> csrf.disable()).headers(headers -> headers
-                        .contentTypeOptions(contentTypeOptions -> contentTypeOptions.disable())
+                ).csrf(csrf -> csrf.disable()).headers((headers) -> headers
+                        .addHeaderWriter(new StaticHeadersWriter("Content-Security-Policy", "default-src 'self'; script-src 'self'"))
                 );
         return http.build();
     }
