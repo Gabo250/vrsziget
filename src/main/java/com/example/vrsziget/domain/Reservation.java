@@ -1,6 +1,7 @@
 package com.example.vrsziget.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -24,6 +25,7 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "email", referencedColumnName = "email")
+    @JsonIgnore
     private ReservationUser resUser;
 
     @Column(name = "name")
@@ -75,6 +77,11 @@ public class Reservation {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Transient // This annotation ensures that this method is not persisted in the database
+    public String getEmail() {
+        return resUser != null ? resUser.getEmail() : null;
     }
 
     public void setEmail(ReservationUser resUser) {

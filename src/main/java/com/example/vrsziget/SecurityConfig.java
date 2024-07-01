@@ -17,7 +17,6 @@ public class SecurityConfig {
                         .requestMatchers("/**").permitAll() // Allow access to this endpoint
                         .anyRequest().authenticated() // Require authentication for all other endpoints
                 ).csrf(csrf -> csrf.disable());
-
         return http.build();
     }
 }
