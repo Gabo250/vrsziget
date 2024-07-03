@@ -9,7 +9,7 @@ type navigateType = {
 };
 
 function NavigateBot({ to, scrollInfo, className }: navigateType) {
-  const scrollY = useScroll(200);
+  const scrollY = useScroll(20);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     const clickedElement = e.currentTarget;
@@ -23,8 +23,8 @@ function NavigateBot({ to, scrollInfo, className }: navigateType) {
     <div
         data-href={to}
         onClick={handleClick}
-      className={twMerge(`absolute bottom-14 size-12 left-1/2 -translate-x-1/2 cursor-pointer z-[30] rounded-full transition-all duration-500 hover:backdrop-blur-sm hover:scale-110 ${
-        scrollY !== 0 ? "translate-y-[250%] -rotate-180 z-[0]" : "translate-y-0"
+      className={twMerge(`absolute bottom-14 size-12 left-1/2 -translate-x-1/2 cursor-pointer z-[20] rounded-full transition-all duration-500 hover:backdrop-blur-sm hover:scale-110 ${
+        scrollY !== 0 ? "translate-y-[550%] -rotate-180 z-[0]" : "translate-y-0"
       }`, className)}
     >
       <BottomArrow />

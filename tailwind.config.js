@@ -14,7 +14,9 @@ export default {
         'vr-man': "url('/images/MQ3-human.png')",
         'mq3': "url('/images/MQ3-headset.png')",
         'kat': "url('/images/kat-vr.png')",
-        'games-header': "url('/images/vr-games.jpg')"
+        'games-header': "url('/images/vr-games.jpg')",
+        'price-card': "url('/images/price-bg.jpg')",
+        'price-header': "url('/images/price-header.jpg')"
       },
 
       screens: {
@@ -49,22 +51,22 @@ export default {
 
       keyframes: {
         'AnimBorder-t': {
-           '0%': { transform: 'translateX(-100%)' },
+           '0%': { transform: 'translateX(-100%)', 'opacity': '1' },
            '100%': { transform: 'translateX(100%)' }
         },
 
         'AnimBorder-l': {
-          '0%': { transform: 'translateY(-100%)' },
+          '0%': { transform: 'translateY(-100%)', 'opacity': '1' },
           '100%': { transform: 'translateY(100%)' }
         },
         
         'AnimBorder-b': {
-           '0%': { transform: 'translateX(100%)' },
+           '0%': { transform: 'translateX(100%)', 'opacity': '1' },
            '100%': { transform: 'translateX(-100%)' }
         },
 
         'AnimBorder-r': {
-          '0%': { transform: 'translateY(100%)' },
+          '0%': { transform: 'translateY(100%)', 'opacity': '1' },
           '100%': { transform: 'translateY(-100%)' }
         },
       }

@@ -1,4 +1,5 @@
 import { mediaElement } from "../component/MediaSlider";
+import Connection from "../home/Connection";
 import Game from "./Game";
 import GamesHeader from "./GameHeader";
 import GamesTextSection from "./GamesTextSection";
@@ -22,19 +23,19 @@ const gamesko: gameType[] = [
 
       {
         type: "image",
-        src: "/images/games/assassin.jpg",
+        src: "./images/games/assassin.jpg",
         alt: "Elven Assassin",
       },
 
       {
         type: "image",
-        src: "/images/games/asssassin_img.png",
+        src: "./images/games/asssassin_img.png",
         alt: "Elven Assassin",
       },
 
       {
         type: "image",
-        src: "/images/games/assassin_img2.jpg",
+        src: "./images/games/assassin_img2.jpg",
         alt: "Elven Assassin",
       }
     ],
@@ -54,19 +55,19 @@ const gamesko: gameType[] = [
 
       {
         type: "image",
-        src: "/images/games/assetto-corsa.jpg",
+        src: "./images/games/assetto-corsa.jpg",
         alt: "Assetto Corsa",
       },
 
       {
         type: "image",
-        src: "/images/games/corsa-img.jpg",
+        src: "./images/games/corsa-img.jpg",
         alt: "Assetto Corsa",
       },
 
       {
         type: "image",
-        src: "/images/games/corsa-img2.webp",
+        src: "./images/games/corsa-img2.webp",
         alt: "Assetto Corsa",
       }
     ],
@@ -86,25 +87,25 @@ const gamesko: gameType[] = [
 
       {
         type: "image",
-        src: "/images/games/beat-saber.jpg",
+        src: "./images/games/beat-saber.jpg",
         alt: "Beat Saber",
       },
 
       {
         type: "image",
-        src: "/images/games/beat-saber2.jpg",
+        src: "./images/games/beat-saber2.jpg",
         alt: "Beat Saber",
       },
 
       {
         type: "image",
-        src: "/images/games/beat-saber3.jpeg",
+        src: "./images/games/beat-saber3.jpeg",
         alt: "Beat Saber",
       },
 
       {
         type: "image",
-        src: "/images/games/beat-saber4.jpg",
+        src: "./images/games/beat-saber4.jpg",
         alt: "Beat Saber",
       }
     ],
@@ -131,7 +132,9 @@ function Games() {
             />
           );
         })
-      }     
+      } 
+
+      <Connection className="!top-0" />    
     </>
   );
 }

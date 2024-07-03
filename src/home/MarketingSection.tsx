@@ -3,7 +3,7 @@ import ParallaxImg from "./ParallaxImg";
 
 function MarketingSection() {
     return(
-        <section className="relative bg-[#030A0C] w-full pt-20 pb-40 px-32 md:px-16 xsm:px-2">
+        <section className="relative bg-[#030A0C] w-full pt-20 pb-40 px-10 md:px-16 xsm:px-2">
             <h2 className="relative w-[35rem] left-[20%] -translate-x-[18%] md:w-full">
                <span className="bg-clip-text text-transparent text-[2.4rem] font-black bg-gradient-to-br from-[rgba(11,133,159,1)] to-[rgba(204,0,255,1)] xsm:text-[2rem] xlsm:!text-[1.6rem]">Éld Át a Digitális Valóságot Egy Teljesen Új Szinten!</span> 
             </h2> 

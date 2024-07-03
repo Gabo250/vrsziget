@@ -13,10 +13,9 @@ type gameProps = {
 function Game({ name, media, headerDesc, description }: gameProps) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useViewBox(ref);
-  console.log(inView);
 
   return (
-    <article className="relative flex justify-center items-center py-20 px-7 gap-40 lg:gap-20 xmd:flex-col bg-gradient-to-r from-[rgba(31,2,68,.4)] from-65% to-[rgba(0,240,255,.3)]">
+    <article className="relative flex justify-center overflow-hidden items-center py-20 px-7 gap-40 lg:gap-20 xmd:flex-col bg-gradient-to-r from-[rgba(31,2,68,.4)] from-65% to-[rgba(0,240,255,.3)]">
       <div className="flex, flex-col gap-28 lg:w-full">
         <h3 className="text-[2rem] font-extrabold text-c-teal italic [text-shadow:2px_2px_3px_#00F0FF]">{name}</h3>
         <MediaSLider startIndex={0} className="w-[30rem] h-96 lg:w-full">

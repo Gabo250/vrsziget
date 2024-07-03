@@ -12,9 +12,9 @@ function GamesTextSection() {
       ref={ref}
       headerText="Merülj El a Virtuális Valóságban - Fedezd Fel a VR Élményt!"
       headerClassName={`relative text-h-teal`}
-      className="relative flex flex-col justify-center gap-16 py-16 px-5 bg-gradient-to-b from-[#110317] from-[10%] via-[rgba(89,14,135,.45)] to-[90%] to-[#0F0417]"
+      className="relative flex flex-col justify-center gap-16 py-16 px-5 z-[20] bg-gradient-to-b from-[#110317] from-[10%] via-[rgba(89,14,135,.45)] to-[90%] to-[#0F0417]"
     >
-      <div className="absolute w-full bottom-[100%] left-0 z-[10] opacity-95">
+      <div className="absolute w-full bottom-[98%] left-0 opacity-95">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#110317"

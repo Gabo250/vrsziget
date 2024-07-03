@@ -18,14 +18,14 @@ function BurgerNav({ burgNavClicked, setBurgNavClicked }: propType) {
 
   return (
     <>
-      <label className="relative z-50 hidden h-10 w-10 cursor-pointer select-none md:block">
+      <label className="fixed right-[5%] top-[2%] -translate-y-[2%] z-[60] hidden h-10 w-10 cursor-pointer select-none md:block">
         <button
           aria-label="Burger menu"
           onClick={handleClick}
           className="absolute h-0 w-0 cursor-pointer opacity-0"
         />
 
-        <div className="relative top-1/2 flex -translate-y-[50%] flex-col items-center justify-center gap-y-2">
+        <div className="relative top-1/2 z-[60] flex -translate-y-[50%] flex-col items-center justify-center gap-y-2">
           <span
             className={`relative h-[2.5px] w-8 bg-gradient-to-r from-hd-purple from-[45%] to-teal-500  shadow-[0px_0px_5px_0px_rgba(0,0,0,.7)] transition-transform duration-500
               ${

@@ -1,6 +1,12 @@
-function Connection() {
+import { twMerge } from "tailwind-merge";
+
+type propsType = {
+  className?: string
+}
+
+function Connection({ className }: propsType) {
   return (
-    <section className="relative w-full top-[22rem] h-[38rem] flex flex-col bg-gradient-to-b gap-6 from-[#0F0417] to-black pt-24 md:top-[29rem]">
+    <section className={twMerge(`relative w-full top-[22rem] h-[38rem] flex flex-col bg-gradient-to-b gap-6 from-[#0F0417] to-black pt-24 md:top-[29rem]`, className)}>
       <div className="flex justify-evenly gap-20 sm:flex-col sm:ml-[25%] xlsm:ml-[10%]">
         <article className="flex flex-col text-white text-[1.25rem]">
           <h3 className="text-[1.25rem] text-h-teal mb-2 [text-shadow:0px_2px_4px_#00F0FF]">
