@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ReservationService {
@@ -62,6 +60,15 @@ public class ReservationService {
     }
 
     @Transactional
+    public List<Reservation> getByDateAndGtype(Timestamp date, String gType) {
+        return resRep.findByDateAndGType(date, gType);
+    }
+
+    public Reservation getByCid(long cid) {
+        return resRep.findByCid(cid);
+    }
+
+    @Transactional
     public String saveReservation(Reservation res) {
         if (!checkPlace(res)) {
             return "out of place";
@@ -85,11 +92,7 @@ public class ReservationService {
         res.setConf(confRep.findByConfirmationCode(confCancUrl.getConformationUrl()));
         resRep.save(res);
 
-        return "saved";
-    }
-
-    public List<Reservation> getByDateAndGtype(Timestamp date, String gType) {
-        return resRep.findByDateAndGType(date, gType);
+        return "saved with this id:" + getByCid(confServ.getConfirmationByConfCode(confCancUrl.getConformationUrl()).getId()).getId();
     }
 
     @Transactional
