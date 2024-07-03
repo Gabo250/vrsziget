@@ -37,7 +37,6 @@ public class ReservationController {
 
     @PostMapping("/api/reservation/save")
     public String saveRes(@RequestBody Reservation res) {
-        System.out.println(res);
         return rService.saveReservation(res);
     }
 }
