@@ -17,4 +17,6 @@ public interface ReservationRepository extends CrudRepository<Reservation, Long>
     Reservation findByCid(@Param("confId") long cid);
     List<Reservation> findByResUser(ReservationUser user);
     List<Reservation> findByDateAndGType(Timestamp date, String gType);
+    List<Reservation> findByDate(Timestamp date);
+    List<Reservation> findByDateBetween(Timestamp start, Timestamp end);
 }

@@ -5,6 +5,8 @@ import com.example.vrsziget.repository.ConfirmationRepository;
 import com.example.vrsziget.repository.ReservationRepository;
 import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -60,6 +62,20 @@ public class ReservationService {
     }
 
     @Transactional
+    public List<Reservation> getByDate(Timestamp date) {
+        return resRep.findByDate(date);
+    }
+
+    public ResponseEntity getByDateBetween(Timestamp s, Timestamp e) {
+        List<Reservation> reservations = resRep.findByDateBetween(s, e);
+        if (reservations != null) {
+            return ResponseHandler.generateResponse(reservations, HttpStatus.OK);
+        }
+
+        return ResponseHandler.generateResponse(reservations, HttpStatus.BAD_REQUEST);
+    }
+
+    @Transactional
     public List<Reservation> getByDateAndGtype(Timestamp date, String gType) {
         return resRep.findByDateAndGType(date, gType);
     }
@@ -69,9 +85,9 @@ public class ReservationService {
     }
 
     @Transactional
-    public String saveReservation(Reservation res) {
+    public ResponseEntity saveReservation(Reservation res) {
         if (!checkPlace(res)) {
-            return "out of place";
+            return ResponseHandler.generateResponse("A foglalás nem lehetséges, nincs már elég szabad hely.", HttpStatus.BAD_REQUEST);
         }
 
         ConfCancUrl confCancUrl = confServ.createUrls();
@@ -84,7 +100,7 @@ public class ReservationService {
         try {
             mailServ.sendEmail(res.getResUser().getEmail(), conf.getConfirmationCode(), conf.getCancellationCode(), res.getName());
         } catch (MessagingException e) {
-            return "Email error";
+            return ResponseHandler.generateResponse("Email hiba.", HttpStatus.NOT_FOUND);
         }
 
         confRep.save(conf);
@@ -92,7 +108,7 @@ public class ReservationService {
         res.setConf(confRep.findByConfirmationCode(confCancUrl.getConformationUrl()));
         resRep.save(res);
 
-        return "saved with this id:" + getByCid(confServ.getConfirmationByConfCode(confCancUrl.getConformationUrl()).getId()).getId();
+        return ResponseHandler.generateResponse("saved with this id:" + getByCid(confServ.getConfirmationByConfCode(confCancUrl.getConformationUrl()).getId()).getId(), HttpStatus.OK);
     }
 
     @Transactional
@@ -101,7 +117,7 @@ public class ReservationService {
         resRep.delete(res);
     }
 
-    private boolean checkPlace(Reservation res) {
+    public boolean checkPlace(Reservation res) {
         List<Reservation> reservationsToChecking = getByDateAndGtype(res.getDate(), res.getgType());
         List<MaxMember> gTypeMaxMember = mmServ.getAll();
 
