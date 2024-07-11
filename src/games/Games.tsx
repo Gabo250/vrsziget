@@ -285,7 +285,7 @@ const gamesko: gameType[] = [
 
       {
         type: "video",
-        src: "./videos/hofcs-video.webm",
+        src: "./videos/hofcs-video.mp4",
         alt: "Cursed Soul videó"
       },
 
@@ -323,7 +323,7 @@ const gamesko: gameType[] = [
 
       {
         type: "video",
-        src: "./videos/sp-video.webm",
+        src: "./videos/sp-video.mp4",
         alt: "Smash Point videó"
       },
 
@@ -437,7 +437,7 @@ const gamesko: gameType[] = [
 
       {
         type: "video",
-        src: "./videos/era-video.webm",
+        src: "./videos/era-video.mp4",
         alt: "ER: Alice videó"
       },
 
