@@ -8,7 +8,7 @@ function ParallaxImg() {
                 <p className="w-[20rem] xlsm:w-full px-3">Ne hagyd ki ezt az egyedülálló lehetőséget! Foglalj időpontot most, és lépj be a VR Sziget varázslatos világába, ahol a valóság és a fantázia találkozik.</p>
             </div>
 
-            <CLink variant="default" hover="animated" effect="glass" url="/jatekok" className="absolute bottom-10 left-[50%] -translate-x-[50%] md:bottom-8 [text-shadow:0px_1px_4px_#ffffff]">foglalás</CLink>
+            <CLink variant="default" hover="animated" effect="glass" url="/foglalas" className="absolute bottom-10 left-[50%] -translate-x-[50%] md:bottom-8 [text-shadow:0px_1px_4px_#ffffff]">foglalás</CLink>
         </section>
     );
 }

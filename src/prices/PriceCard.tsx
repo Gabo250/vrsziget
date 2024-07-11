@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import AnimatedBorder from "../component/AnimatedBorder";
 import Card from "../component/Card";
 import useViewBox from "../hooks/useViewBox";
-import { Link } from "react-router-dom";
 
 type propsType = {
   oprice?: string;
@@ -24,8 +23,7 @@ function PriceCard({ price, time, desc, oprice }: propsType) {
     setMouseOver(false);
   };
 
-  return (
-    <Link to={"/foglalas"}>
+  return (    
       <Card
         ref={ref}
         onMouseEnter={handleMouseEnter}
@@ -56,7 +54,6 @@ function PriceCard({ price, time, desc, oprice }: propsType) {
 
         {mouseOver ? <AnimatedBorder className="opacity-0" /> : null}
       </Card>
-    </Link>
   );
 }
 

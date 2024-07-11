@@ -16,18 +16,23 @@ export default {
         'kat': "url('/images/kat-vr.png')",
         'games-header': "url('/images/vr-games.jpg')",
         'price-card': "url('/images/price-bg.jpg')",
-        'price-header': "url('/images/price-header.jpg')"
+        'price-header': "url('/images/price-header.jpg')",
+        'vr-res': "url('/images/vr-res.jpg')",
+        'katvr': "url('/images/kat-vr.jpg')",
+        'simulator': "url('/images/simulator.jpg')"
       },
 
       screens: {
-        'xxlsm': {'max': '360px'},
+        'xxlsm': {'max': '390px'},
         'xlsm': {'max': '440px'},
         'xsm': {'max': '560px'},
         'sm' : {'max': '640px'},
+        'd': {'max': '730px'},
         'md' : {'max': '768px'},
         'mmd': {'min': '769px'},
         'lmd': {'max': '840px'},
         'xmd': {'max': '900px'},
+        'xlmd': {'max': '980px'},
         'lg' : {'max': '1024px'},
         'xl' : {'max': '1280px'},
         '2xl': {'max': '1536px'},

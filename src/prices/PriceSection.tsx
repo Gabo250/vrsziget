@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import PriceCard from "./PriceCard";
 
 const data = [
   {
-    title: "Alap VR Játékok",
+    title: "VR Játékok",
     price: [
       {
         uPrice: 6000,
@@ -34,7 +35,7 @@ const data = [
   },
 
   {
-    title: "Szabadulószoba Játékok",
+    title: "Szabadulószoba VR Játékok",
     price: [
       {
         uPrice: 6500,
@@ -52,7 +53,7 @@ const data = [
   },
 
   {
-    title: "Kat VR Játékok",
+    title: "Kat VR",
     price: [
       {
         uPrice: 8000,
@@ -63,7 +64,7 @@ const data = [
   },
 
   {
-    title: "Szimulátor Játékok",
+    title: "Szimulátor VR",
     price: [
       {
         uPrice: 6000,
@@ -97,13 +98,14 @@ function PriceSection() {
             <div className="flex justify-center items-center gap-5 lg:flex-col lg:gap-24">
               {type.price.map((uprice) => {
                 return (
-                  <PriceCard
-                    key={uprice.uPrice}
-                    price={Intl.NumberFormat("hu-HU").format(uprice.uPrice)}
-                    oprice={uprice.oPrice ? Intl.NumberFormat("hu-HU").format(uprice.oPrice) : undefined}
-                    time={uprice.time}
-                    desc={uprice.desc}
-                  />
+                  <Link to={"/foglalas"} key={uprice.uPrice}>
+                    <PriceCard                      
+                      price={Intl.NumberFormat("hu-HU").format(uprice.uPrice)}
+                      oprice={uprice.oPrice ? Intl.NumberFormat("hu-HU").format(uprice.oPrice) : undefined}
+                      time={uprice.time}
+                      desc={uprice.desc}
+                    />
+                  </Link>
                 );
               })}
             </div>

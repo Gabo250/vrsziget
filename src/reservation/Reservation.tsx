@@ -1,29 +1,18 @@
-import { useEffect, useState } from "react";
+import ReservationBoardProvider from "../context/ReservationBoardProvider";
+import ReservationProvider from "../context/ReservationProvider";
+import Connection from "../home/Connection";
+import BookTable from "./BookBoard";
 
 function Reservation() {
-     const [state, setState] = useState<{}>();
-
-     useEffect(() => {
-        const loginUrl = 'https://ec2-3-122-241-56.eu-central-1.compute.amazonaws.com:8080/api/reservation/getall'; // Replace with your login URL
-        const loginData = {
-            username: "vrsziget",
-            password: "Vrsziget2024."
-        };
-
-        fetch(loginUrl, {
-            method: "GET",            
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Basic ${loginData.username} ${loginData.password}`            
-            }           
-        }).then(response => {
-            setState(response.json);
-            console.log(state);
-        })
-        
-     })
-     
-     return null
+  return (
+    <ReservationProvider>
+      <section className="h-[25rem] w-full bg-island bg-cover bg-center"></section>
+      <ReservationBoardProvider>
+        <BookTable />
+      </ReservationBoardProvider>
+      <Connection className="!top-0" />
+    </ReservationProvider>
+  );
 }
 
 export default Reservation;
