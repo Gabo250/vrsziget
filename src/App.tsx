@@ -11,7 +11,7 @@ import Cancellation from "./confirmation/Cancellation";
 function App() {
   return (
     <>
-      <BrowserRouter basename="/vrsziget">
+      <BrowserRouter>
         <ScrollTop />
         <Nav />
         <Routes>
