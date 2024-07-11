@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from "react";
 */
 function useScroll(time : number) {
     const [scrollY, setScrollY] = useState<number>(() => { return window.scrollY });
-    const timeOutID = useRef<number>();
+    const timeOutID = useRef<any>();
 
     useEffect(() => {
         const handleScroll = () => {

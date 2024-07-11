@@ -18,7 +18,7 @@ function BookInformations() {
   const [cardClicked, setCardClicked] = useState<number>(0);
   const { state, dispatch } = useReservationInfo();
   const { boardState, boardDispatch } = useReservationBoardInfo();
-  const [ data, isLoading ] = useFetch("reservation/save", "POST", boardState.resFormSubmitted, boardState.resFormSubmitted, {
+  const [ isLoading ] = useFetch("reservation/save", "POST", boardState.resFormSubmitted, boardState.resFormSubmitted, {
     name: state.name,
     email: state.email,
     gType: state.gtype,
