@@ -1,4 +1,3 @@
-import { useState } from "react";
 import SearchBar from "./SearchBar";
 
 type searchProps = {

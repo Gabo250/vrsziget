@@ -33,7 +33,9 @@ function LoginForm() {
   });
   const [_, isLoading] = useFetch("", "POST", false, false, {});
 
-  const onSubmit: SubmitHandler<FormFields> = (data) => {};
+  const onSubmit: SubmitHandler<FormFields> = (data) => {
+    data
+  };
 
   return (
     <form

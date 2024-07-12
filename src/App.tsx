@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./home/Home";
 import Games from "./games/Games";
 import Nav from "./nav/Nav";
