@@ -21,7 +21,7 @@ const gameImgInfo = [
 function GameSection() {
     return (
         <section className="relative flex flex-col justify-center overflow-hidden items-center gap-16 w-full h-[45rem] bg-gradient-to-b top-[22rem] from-[#110317] from-[25%] via-l-purple to-[75%] to-[#0F0417] overflow-x-hidden md:top-[28.98rem]">
-            <h2 className="text-[2rem] font-black italic text-h-teal">VR Játékok</h2>
+            <h2 className="text-[2rem] font-black italic text-h-teal">Rengeteg Játék</h2>
             <div className="flex gap-20">
                 {
                     gameImgInfo.map((game) => {

@@ -19,7 +19,8 @@ export default {
         'price-header': "url('/images/price-header.jpg')",
         'vr-res': "url('/images/vr-res.jpg')",
         'katvr': "url('/images/kat-vr.jpg')",
-        'simulator': "url('/images/simulator.jpg')"
+        'simulator': "url('/images/simulator.jpg')",
+        'login': "url('../images/bg-login.webp')"
       },
 
       screens: {
@@ -51,7 +52,12 @@ export default {
         'border-t': 'AnimBorder-t 2s linear infinite',
         'border-l': 'AnimBorder-l 2s linear infinite',
         'border-b': 'AnimBorder-b 2s linear infinite',
-        'border-r': 'AnimBorder-r 2s linear infinite'
+        'border-r': 'AnimBorder-r 2s linear infinite',
+        "color-change": "colorchange 4s infinite",
+        spin: "spin 1s linear infinite",
+        scale: "scale 2s linear infinite",
+        reveal: "reveal 2s linear",
+        "error-animation": "errorcolor 2s linear infinite"
       },
 
       keyframes: {
@@ -74,6 +80,38 @@ export default {
           '0%': { transform: 'translateY(100%)', 'opacity': '1' },
           '100%': { transform: 'translateY(-100%)' }
         },
+
+        colorchange: {
+          "0%, 100%": { "border-color": "rgba(191 219 254 / 80%)" },
+          "33.33%": { "border-color": "rgba(147 197 253 / 80%)" },
+          "66.66%": { "border-color": "rgba(96 165 250 / 80%)" },
+        },
+  
+        errorcolor: {
+          "0%,100%": { "border-color": "rgb(248 113 113)" },
+          "50%": { "border-color": "rgb(185 28 28)" }
+        },
+  
+        reveal: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        },
+  
+        spin: {
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+  
+        scale: {
+          "0%": {
+            transform: "scale(1)",
+          },
+  
+          "80%,100%": {
+            transform: "scale(0)",
+          },
+        }
       }
     },
   },

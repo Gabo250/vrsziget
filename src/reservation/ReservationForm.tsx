@@ -121,7 +121,7 @@ function ReservationForm() {
       <input
         type="submit"
         value="Foglalás"
-        className="w-24 p-3 transition-all rounded-lg duration-300 bg-opacity-40 cursor-pointer hover:scale-105 hover:shadow-[0px_0px_30px_1px_rgb(17_94_89)]"
+        className="w-24 p-3 transition-all rounded-lg duration-300 bg-slate-700 text-slate-200 bg-opacity-40 cursor-pointer hover:scale-105 hover:shadow-[0px_0px_30px_1px_rgb(17_94_89)]"
       />
     </form>
   );

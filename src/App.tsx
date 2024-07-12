@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./home/Home";
 import Games from "./games/Games";
 import Nav from "./nav/Nav";
@@ -7,22 +7,38 @@ import Prices from "./prices/Prices";
 import Reservation from "./reservation/Reservation";
 import Confirmation from "./confirmation/Confirmation";
 import Cancellation from "./confirmation/Cancellation";
+import NotFound from "./NotFound";
+import Login from "./adminpanel/login/Login";
+import { useEffect, useState } from "react";
+import DashBoard from "./adminpanel/dashboard/DashBoard";
 
 function App() {
+  const loc = useLocation();
+  const [log, setLog] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (loc.pathname.split("/")[1] === "admin") {
+      setLog(true);
+    } else if (log) {
+      setLog(false);
+    }
+  }, [loc]);
+
   return (
     <>
-      <BrowserRouter>
-        <ScrollTop />
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/jatekok" element={<Games />} />
-          <Route path="/arak" element={<Prices />} />
-          <Route path="/foglalas" element={<Reservation />} />
-          <Route path="/megerosites/*" element={ <Confirmation /> } />
-          <Route path="/lemondas/*" element={ <Cancellation /> } />
-        </Routes>
-      </BrowserRouter>
+      <ScrollTop />
+      {!log ? <Nav /> : null}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/jatekok" element={<Games />} />
+        <Route path="/arak" element={<Prices />} />
+        <Route path="/foglalas" element={<Reservation />} />
+        <Route path="/megerosites/*" element={<Confirmation />} />
+        <Route path="/lemondas/*" element={<Cancellation />} />
+        <Route path="/admin/adminlogin" element={<Login />} />
+        <Route path="/admin/dashboard" element={ <DashBoard /> } />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
