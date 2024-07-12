@@ -18,8 +18,7 @@ const schema = z.object({
 function AddNewGameForm() {
   const {
     register,
-    formState: { errors, dirtyFields },
-    handleSubmit,
+    formState: { dirtyFields },
   } = useForm<FormFields>({
     defaultValues: {
       name: "",
