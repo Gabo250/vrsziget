@@ -58,14 +58,14 @@ function BookInformations() {
 
   return (
     <section
-      className={`fixed top-1/2 left-1/2 p-20 -translate-x-1/2 overflow-y-scroll -translate-y-1/2 z-[100] bg-black bg-opacity-90 backdrop-blur-sm w-full h-full xsm:p-10 xlsm:!px-0`}
+      className={`fixed top-1/2 left-1/2 p-20 -translate-x-1/2 overflow-y-scroll -translate-y-1/2 z-[100] bg-black bg-opacity-90 backdrop-blur-sm w-full h-full xsm:p-10 xlsm:!px-0 ${ boardState.resFormSubmitted && !isLoading ? "flex justify-center items-center" : "" }`}
     >
       {!boardState.resFormSubmitted && (
         <div>
           <div className="text-white flex flex-col py-10 gap-6">
             <div className="flex gap-6 items-center">
               <span className="w-10 h-10 flex text-[1.25rem] justify-center items-center rounded-full border-[1px] border-h-teal">
-                1
+                2
               </span>
               <p>Játékosszám Kiválasztása</p>
             </div>
@@ -97,7 +97,7 @@ function BookInformations() {
           <div className="text-white flex flex-col py-10 gap-6">
             <div className="flex items-center gap-6">
               <span className="w-10 h-10 flex text-[1.25rem] justify-center items-center rounded-full border-[1px] border-h-teal">
-                2
+                3
               </span>
               <p>Szükséges Adatok megadása</p>
             </div>
@@ -112,7 +112,7 @@ function BookInformations() {
         <div className="flex flex-col gap-6 text-white">
           <div className="flex gap-6 items-center">
             <span className="w-10 h-10 flex text-[1.25rem] justify-center items-center rounded-full border-[1px] border-h-teal">
-              3
+              4
             </span>
             <p>Foglalás megerősítése</p>
           </div>
